@@ -33,7 +33,7 @@ else:
             mask = (
                 df['Name'].astype(str).str.contains(search_input, case=False, na=False) |
                 df['Mobile'].astype(str).str.contains(search_input, na=False) |
-                df['E-mail'].astype(str).str.contains(search_input, case=False, na=False)
+                df['E mail'].astype(str).str.contains(search_input, case=False, na=False)
             )
             
             results = df[mask]
@@ -41,7 +41,7 @@ else:
             if not results.empty:
                 st.success(f"Matches Found: {len(results)}")
                 # Show specific columns in your requested order
-                st.dataframe(results[['LM number', 'Name', 'City', 'Mobile', 'E-mail']], hide_index=True)
+                st.dataframe(results[['LM number', 'Name', 'City', 'Mobile', 'E mail']], hide_index=True)
             else:
                 st.warning("No member found with those details. Please try again.")
         else:
